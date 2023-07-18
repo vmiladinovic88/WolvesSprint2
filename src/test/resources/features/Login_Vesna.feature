@@ -51,6 +51,10 @@ Feature: User Story 1
     Given I am on the login page
     Then I should be able to clik on Remember me link
 
+  Scenario: User should see the password in bullet signs by default
+    Given I am on the login page
+    When I type password
+    Then I should see the password in bullet signs
 
 
 

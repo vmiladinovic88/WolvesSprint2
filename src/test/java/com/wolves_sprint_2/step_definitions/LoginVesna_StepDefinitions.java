@@ -90,4 +90,14 @@ public class LoginVesna_StepDefinitions {
         loginPageVesna.rememberMe.click();
         Assert.assertTrue("Remember me link is not clickable",loginPageVesna.checkboxRememberMe.isEnabled());
     }
+
+    @When("I type password")
+    public void iTypePassword() {
+        loginPageVesna.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
+    }
+
+    @Then("I should see the password in bullet signs")
+    public void iShouldSeeThePasswordInBulletSigns() {
+        Assert.assertTrue(!(loginPageVesna.passwordInput.getText().contains(ConfigurationReader.getProperty("password"))));
+    }
 }
