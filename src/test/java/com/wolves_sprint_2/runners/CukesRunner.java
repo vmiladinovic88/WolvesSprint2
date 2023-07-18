@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/wolves_sprint_2/step_definitions",
-        dryRun = true,
-        tags = " @wip",
+        dryRun = false,
+        tags = " @Vesna",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}

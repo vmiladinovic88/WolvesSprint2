@@ -24,7 +24,7 @@ public class LoginVesna_StepDefinitions {
 
     @When("I login using HR email and password")
     public void iLoginUsingHREmailAndPassword() {
-        loginPageVesna.login(ConfigurationReader.getProperty("hr_username_vesna"),ConfigurationReader.getProperty("password_vesna"));
+        loginPageVesna.login(ConfigurationReader.getProperty("hr_username"),ConfigurationReader.getProperty("password"));
     }
 
     @Then("I land on the home page")
@@ -36,17 +36,17 @@ public class LoginVesna_StepDefinitions {
 
     @When("I login using marketing email and password")
     public void iLoginUsingMarketingEmailAndPassword() {
-        loginPageVesna.login(ConfigurationReader.getProperty("marketing_username_vesna"),ConfigurationReader.getProperty("password_vesna"));
+        loginPageVesna.login(ConfigurationReader.getProperty("marketing_username"),ConfigurationReader.getProperty("password"));
     }
 
     @When("I login using Helpdesk email and password")
     public void iLoginUsingHelpdeskEmailAndPassword() {
-        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),ConfigurationReader.getProperty("password_vesna"));
+        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username"),ConfigurationReader.getProperty("password"));
     }
 
     @When("I login using valid email and incorrect password")
     public void iLoginUsingValidEmailAndIncorrectPassword() {
-        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),"incorrect");
+        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username"),"incorrect");
     }
 
 
@@ -57,7 +57,7 @@ public class LoginVesna_StepDefinitions {
 
     @When("I login using invalid email and valid password")
     public void iLoginUsingInvalidEmailAndValidPassword() {
-        loginPageVesna.login("invalid@invalid.com",ConfigurationReader.getProperty("password_vesna"));
+        loginPageVesna.login("invalid@invalid.com",ConfigurationReader.getProperty("password"));
     }
 
     @When("I login using invalid email and invalid password")
@@ -67,7 +67,7 @@ public class LoginVesna_StepDefinitions {
 
     @When("I login with correct username and empty password")
     public void i_login_with_correct_username_and_empty_password() {
-        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),"");
+        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username"),"");
     }
     @Then("I should see error message {string}")
     public void i_should_see_error_message(String string) {
