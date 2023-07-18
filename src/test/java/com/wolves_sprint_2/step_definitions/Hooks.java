@@ -18,7 +18,7 @@ import java.time.Duration;
 /*
 In this class we will be able to create "pre" and "post" condition
 for ALL the SCENARIOS and even STEPS.
- /
+ */
 public class Hooks {
 
     //import the @Before coming from io.cucumber.java
@@ -35,7 +35,7 @@ public class Hooks {
         new LoginPage().login(ConfigurationReader.getProperty("hr_username"),ConfigurationReader.getProperty("password"));
     }
 
-    /
+    /*
     @After will be executed automatically after EVERY scenario in the project.
      */
     @After
