@@ -1,5 +1,6 @@
 package com.wolves_sprint_2.step_definitions;
 
+import com.beust.ah.A;
 import com.wolves_sprint_2.pages.LoginPage_Vesna;
 import com.wolves_sprint_2.utilities.ConfigurationReader;
 import com.wolves_sprint_2.utilities.Driver;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class LoginVesna_StepDefinitions {
 
@@ -75,5 +77,17 @@ public class LoginVesna_StepDefinitions {
     @When("I login with empty username and correct password")
     public void i_login_with_empty_username_and_correct_password() {
         loginPageVesna.login("",ConfigurationReader.getProperty("password"));
+    }
+
+
+    @Then("I should see Remember me link exists on the Login page")
+    public void iShouldSeeRememberMeLinkExistsOnTheLoginPage() {
+        Assert.assertTrue("Remember me link is not displayed",loginPageVesna.rememberMe.isDisplayed());
+    }
+
+    @Then("I should be able to clik on Remember me link")
+    public void iShouldBeAbleToClikOnRememberMeLink() {
+        loginPageVesna.rememberMe.click();
+        Assert.assertTrue("Remember me link is not clickable",loginPageVesna.checkboxRememberMe.isEnabled());
     }
 }

@@ -27,4 +27,10 @@ public class LoginPage_Vesna {
     }
     @FindBy(xpath = "//div[.='Incorrect login or password']")
     public WebElement errorMessage;
+
+    @FindBy(xpath = "//label[.='Remember me on this computer']")
+    public WebElement rememberMe;
+
+    @FindBy(id="USER_REMEMBER")
+    public WebElement checkboxRememberMe;
 }

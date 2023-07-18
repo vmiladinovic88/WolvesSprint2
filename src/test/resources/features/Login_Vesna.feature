@@ -43,6 +43,16 @@ Feature: User Story 1
     When I login with correct username and empty password
     Then I should see error message "Please fill out this field"
 
+  Scenario: "Remember me" link is visible
+    Given I am on the login page
+    Then I should see Remember me link exists on the Login page
+
+  Scenario: "Remember me" link is clickable
+    Given I am on the login page
+    Then I should be able to clik on Remember me link
+
+
+
 
 
 
