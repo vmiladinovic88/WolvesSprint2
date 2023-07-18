@@ -100,4 +100,5 @@ public class LoginVesna_StepDefinitions {
     public void iShouldSeeThePasswordInBulletSigns() {
         Assert.assertTrue(!(loginPageVesna.passwordInput.getText().contains(ConfigurationReader.getProperty("password"))));
     }
+
 }
