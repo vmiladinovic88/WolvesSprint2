@@ -3,6 +3,7 @@ package com.wolves_sprint_2.step_definitions;
 
 
 
+import com.wolves_sprint_2.pages.LoginPage;
 import com.wolves_sprint_2.utilities.BrowserUtils;
 import com.wolves_sprint_2.utilities.ConfigurationReader;
 import com.wolves_sprint_2.utilities.Driver;
@@ -17,7 +18,7 @@ import java.time.Duration;
 /*
 In this class we will be able to create "pre" and "post" condition
 for ALL the SCENARIOS and even STEPS.
- */
+ /
 public class Hooks {
 
     //import the @Before coming from io.cucumber.java
@@ -29,12 +30,12 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    //@Before (value = "@login", order = 2 )
+    @Before (value = "@login", order = 2 )
     public void login_scenario_before(){
-        System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+        new LoginPage().login(ConfigurationReader.getProperty("hr_username"),ConfigurationReader.getProperty("password"));
     }
 
-    /*
+    /
     @After will be executed automatically after EVERY scenario in the project.
      */
     @After
