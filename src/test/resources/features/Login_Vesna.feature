@@ -33,4 +33,16 @@ Feature: User Story 1
     When I login using invalid email and invalid password
     Then I should see error message for invalid credentials
 
+  Scenario: "Please fill out this field" error message should be displayed if the username is empty
+    Given I am on the login page
+    When I login with empty username and correct password
+    Then I should see error message "Please fill out this field"
+
+  Scenario: "Please fill out this field" error message should be displayed if the password is empty
+    Given I am on the login page
+    When I login with correct username and empty password
+    Then I should see error message "Please fill out this field"
+
+
+
 

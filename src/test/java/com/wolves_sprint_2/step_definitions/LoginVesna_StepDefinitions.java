@@ -62,4 +62,18 @@ public class LoginVesna_StepDefinitions {
     public void iLoginUsingInvalidEmailAndInvalidPassword() {
         loginPageVesna.login("invalid@invalid.com","invalid");
     }
+
+    @When("I login with correct username and empty password")
+    public void i_login_with_correct_username_and_empty_password() {
+        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),"");
+    }
+    @Then("I should see error message {string}")
+    public void i_should_see_error_message(String string) {
+       Assert.assertTrue("Error message is not properly displayed",loginPageVesna.errorMessage.equals(string));
+    }
+
+    @When("I login with empty username and correct password")
+    public void i_login_with_empty_username_and_correct_password() {
+        loginPageVesna.login("",ConfigurationReader.getProperty("password"));
+    }
 }

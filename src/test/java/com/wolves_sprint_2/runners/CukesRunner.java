@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/wolves_sprint_2/step_definitions",
         dryRun = true,
-        tags = " @Vwip",
+        tags = " @wip",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
