@@ -3,6 +3,7 @@ package com.wolves_sprint_2.step_definitions;
 
 
 
+import com.wolves_sprint_2.pages.LoginPage;
 import com.wolves_sprint_2.utilities.BrowserUtils;
 import com.wolves_sprint_2.utilities.ConfigurationReader;
 import com.wolves_sprint_2.utilities.Driver;
@@ -29,9 +30,9 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    //@Before (value = "@login", order = 2 )
+    @Before (value = "@login", order = 2 )
     public void login_scenario_before(){
-        System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+        new LoginPage().login(ConfigurationReader.getProperty("hr_username"),ConfigurationReader.getProperty("password"));
     }
 
     /*
