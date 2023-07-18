@@ -25,4 +25,6 @@ public class LoginPage_Vesna {
         passwordInput.sendKeys(password);
         signInButton.click();
     }
+    @FindBy(xpath = "//div[.='Incorrect login or password']")
+    public WebElement errorMessage;
 }

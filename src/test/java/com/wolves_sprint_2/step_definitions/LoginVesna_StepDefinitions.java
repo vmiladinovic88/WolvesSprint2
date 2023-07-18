@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class LoginVesna_StepDefinitions {
 
@@ -39,5 +40,26 @@ public class LoginVesna_StepDefinitions {
     @When("I login using Helpdesk email and password")
     public void iLoginUsingHelpdeskEmailAndPassword() {
         loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),ConfigurationReader.getProperty("password_vesna"));
+    }
+
+    @When("I login using valid email and incorrect password")
+    public void iLoginUsingValidEmailAndIncorrectPassword() {
+        loginPageVesna.login(ConfigurationReader.getProperty("helpdesk_username_vesna"),"incorrect");
+    }
+
+
+    @Then("I should see error message for invalid credentials")
+    public void iShouldSeeErrorMessageForInvalidCredentials() {
+        Assert.assertTrue(loginPageVesna.errorMessage.isDisplayed());
+    }
+
+    @When("I login using invalid email and valid password")
+    public void iLoginUsingInvalidEmailAndValidPassword() {
+        loginPageVesna.login("invalid@invalid.com",ConfigurationReader.getProperty("password_vesna"));
+    }
+
+    @When("I login using invalid email and invalid password")
+    public void iLoginUsingInvalidEmailAndInvalidPassword() {
+        loginPageVesna.login("invalid@invalid.com","invalid");
     }
 }
