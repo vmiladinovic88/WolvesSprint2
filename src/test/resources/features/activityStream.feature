@@ -1,4 +1,4 @@
-@activity
+@login
 Feature: Visibility of options on the page
 
   User Story:
