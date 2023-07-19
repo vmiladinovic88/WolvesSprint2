@@ -1,6 +1,7 @@
 package com.wolves_sprint_2.step_definitions;
 
 import com.wolves_sprint_2.pages.PollPage_Elif;
+import com.wolves_sprint_2.utilities.BrowserUtils;
 import com.wolves_sprint_2.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,8 +27,8 @@ public class PollElif_StepDefinitions {
     }
 
     @Then("user should see {string} by default for delivery option")
-    public void user_should_see_by_default_for_delivery_option(String string) {
-        Assert.assertEquals(pollPageElif.allEmployeesOption.getText(), string);
+    public void user_should_see_by_default_for_delivery_option(String deliveryOption) {
+        Assert.assertEquals(pollPageElif.allEmployeesOption.getText(), deliveryOption);
     }
 
 
