@@ -11,6 +11,7 @@ public class LoginPage_Vesna {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
     @FindBy(name="USER_LOGIN")
     public WebElement usernameInput;
 
