@@ -30,7 +30,7 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    @Before (value = "@login", order = 2 )
+    @Before (value = "@activity", order = 2 )
     public void login_scenario_before(){
         new LoginPage().login(ConfigurationReader.getProperty("hr_username"),ConfigurationReader.getProperty("password"));
     }
