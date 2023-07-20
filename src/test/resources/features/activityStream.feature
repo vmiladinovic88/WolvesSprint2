@@ -1,27 +1,24 @@
-@login @activity
-Feature: Visibility of options on the page
+@B29G15-266 @login
+Feature: Default
 
-  User Story:
-  As a user, I should be able to see all the options on the Activity stream page.
+	
+	@B29G15-264
+	Scenario: Auto-Verify users can view the options on Activity Stream page
+		Given user land on the "stream" page
+		And user view the following options on Activity stream page
+		      | MESSAGE |
+		      | TASK    |
+		      | EVENT   |
+		      | POLL    |
+		      | MORE    |	
 
-  Background: For all scenarios user is on the login page of CRM application
-    Given user land on the "stream" page
-
-
-
-  Scenario:  Options verification
-    And user view the following options on Activity stream page
-      | MESSAGE |
-      | TASK    |
-      | EVENT   |
-      | POLL    |
-      | MORE    |
-
-
-  Scenario:  Dropdown  verification
-    And user clicks the MORE tab
-    And user views the following options under more tab
-      | File         |
-      | Appreciation |
-      | Announcement |
-      | Workflow     |
+	
+	@B29G15-265
+	Scenario: Auto-Verify users can view the options under More tab
+		Given user land on the "stream" page
+		And user clicks the MORE tab
+		    And user views the following options under more tab
+		      | File         |
+		      | Appreciation |
+		      | Announcement |
+		      | Workflow     |
