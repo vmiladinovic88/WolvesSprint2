@@ -1,6 +1,7 @@
 @B29G15-263 @login
-Feature: Default
+Feature: Creating Poll
 
+	Story: As a user, I should be able to create a poll by clicking on Poll tab under Active Stream.
 	
 	@B29G15-255
 	Scenario: US10/AC1/TC1: The delivery should be to 'All employees' by default.

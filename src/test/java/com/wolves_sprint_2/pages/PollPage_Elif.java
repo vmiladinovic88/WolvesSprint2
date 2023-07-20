@@ -9,9 +9,13 @@ import java.util.List;
 
 public class PollPage_Elif {
 
-    public PollPage_Elif(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public PollPage_Elif() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+
+    @FindBy(linkText = "Activity Stream")
+    public WebElement streamLink;
 
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']")
     public WebElement pollBtn;
@@ -40,16 +44,16 @@ public class PollPage_Elif {
     @FindBy(xpath = "//input[@id='answer_0__2_']")
     public WebElement answer3Field;
 
-    @FindBy (xpath = "//input[@class='vote-block-inp adda']")
+    @FindBy(xpath = "//input[@class='vote-block-inp adda']")
     public List<WebElement> answersField;
 
-    @FindBy (id = "blog-submit-button-save")
+    @FindBy(id = "blog-submit-button-save")
     public WebElement sendBtn;
 
     @FindBy(linkText = "Add question")
     public WebElement addQuestionLink;
 
-    @FindBy (id = "multi_0")
+    @FindBy(id = "multi_0")
     public WebElement allowMultiChoiceBtn;
 
     @FindBy(xpath = "//button[.='Vote']")
@@ -67,11 +71,11 @@ public class PollPage_Elif {
     @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement displayAllEmployees;
 
-    public void switchToTextAreaFrame(){
+    public void switchToTextAreaFrame() {
         Driver.getDriver().switchTo().frame(iframe);
     }
 
-    public void switchToParentFrame(){
+    public void switchToParentFrame() {
         Driver.getDriver().switchTo().parentFrame();
     }
 

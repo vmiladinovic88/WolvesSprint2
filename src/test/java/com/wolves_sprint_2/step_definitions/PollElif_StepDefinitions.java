@@ -18,7 +18,7 @@ public class PollElif_StepDefinitions {
 
     @Given("the user is on the stream page")
     public void the_user_is_on_the_stream_page() {
-
+       pollPageElif.streamLink.click();
     }
 
     @When("user click on the Poll tab")
